@@ -1,6 +1,7 @@
 package characters;
 
 import items.Item;
+import monsters.Monster;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,6 +12,8 @@ public class CharacterTest {
     Character barbarian, dwarf, knight, warlock, wizard;
     Item sword, axe, club, fireball, lightning, potion;
     Cleric cleric;
+
+    Monster orc, goblin;
 
     @Before
     public void setup(){
@@ -27,6 +30,9 @@ public class CharacterTest {
         fireball = new Item(-15);
         lightning = new Item(-20);
         potion = new Item(10);
+
+        goblin = new Monster(125, 23);
+        orc = new Monster(200, 8);
 
     }
 
@@ -60,5 +66,13 @@ public class CharacterTest {
         barbarian.updateHp(-10);
         cleric.heal(potion, barbarian);
         assertEquals(120, barbarian.getHp());
+    }
+
+    @Test
+    public void playersCanAttack() {
+        knight.addItem(sword);
+        knight.selectItem(sword);
+        knight.attack(orc);
+        assertEquals(190, orc.getHp());
     }
 }

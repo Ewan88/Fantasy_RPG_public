@@ -45,7 +45,7 @@ public abstract class Character implements IAttack {
         return currentItem;
     }
 
-    public void attack(Item weapon, Monster target){
-        target.updateHp(weapon.getEffect());
+    public void attack(Monster target){
+        target.updateHp(currentItem.getEffect());
     }
 }

@@ -5,5 +5,5 @@ import monsters.Monster;
 
 public interface IAttack {
 
-    public void attack(Item weapon, Monster target);
+    public void attack(Monster target);
 }
