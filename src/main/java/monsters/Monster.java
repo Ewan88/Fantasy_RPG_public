@@ -1,4 +1,5 @@
 package monsters;
+import characters.Character;
 
 public class Monster {
     int hp, damage;
@@ -18,6 +19,10 @@ public class Monster {
 
     public int getDamage() {
         return damage;
+    }
+
+    public void attack (Character target){
+        target.updateHp(-this.damage);
     }
 
 }
