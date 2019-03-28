@@ -7,4 +7,6 @@ public class Warlock extends Character {
         this.setMaxhp(this.getHp());
     }
 
+
+
 }

@@ -85,4 +85,20 @@ public class CharacterTest {
         knight.attack(orc);
         assertTrue(orc.getHp() > 184);
     }
+
+    @Test
+    public void barbarianDoesIncreasedDamage() {
+        barbarian.addItem(axe);
+        barbarian.selectItem(axe);
+        barbarian.attack(orc);
+        assertTrue(orc.getHp() > 170);
+    }
+
+    @Test
+    public void wizardHasUltimate() {
+        wizard.addItem(lightning);
+        wizard.selectItem(lightning);
+        wizard.attack(orc);
+        assertTrue(orc.getHp() >= 100);
+    }
 }
