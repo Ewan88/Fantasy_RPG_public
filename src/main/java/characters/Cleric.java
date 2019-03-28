@@ -9,7 +9,9 @@ public class Cleric extends Character {
     }
 
     public void heal(Item item, Character target){
-        target.updateHp(item.getEffect());
+        if (target.getHp() < target.getMaxhp() && target.getHp() > 0){
+            target.updateHp(item.getEffect());
+        }
     }
 
 }

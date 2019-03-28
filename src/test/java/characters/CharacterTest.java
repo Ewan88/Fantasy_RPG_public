@@ -69,6 +69,12 @@ public class CharacterTest {
     }
 
     @Test
+    public void cannotOverheal() {
+        cleric.heal(potion, barbarian);
+        assertEquals(120, barbarian.getHp());
+    }
+
+    @Test
     public void playersCanAttack() {
         knight.addItem(sword);
         knight.selectItem(sword);

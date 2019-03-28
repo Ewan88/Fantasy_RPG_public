@@ -8,12 +8,13 @@ import java.util.ArrayList;
 
 public abstract class Character implements IAttack {
 
-    private int hp;
+    private int hp, maxhp;
     private ArrayList<Item> items;
     private Item currentItem;
 
     public Character(){
         this.hp = 100;
+        this.maxhp = this.hp;
         this.items = new ArrayList<Item>();
         this.currentItem = null;
     }
@@ -24,6 +25,14 @@ public abstract class Character implements IAttack {
 
     public void updateHp(int value) {
         this.hp += value;
+    }
+
+    public int getMaxhp() {
+        return maxhp;
+    }
+
+    public void setMaxhp(int maxhp) {
+        this.maxhp = maxhp;
     }
 
     public ArrayList<Item> getItems() {
