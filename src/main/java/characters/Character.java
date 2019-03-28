@@ -4,7 +4,9 @@ import interfaces.IAttack;
 import items.Item;
 import monsters.Monster;
 
+import java.security.PrivateKey;
 import java.util.ArrayList;
+import java.util.Random;
 
 public abstract class Character implements IAttack {
 
@@ -55,6 +57,10 @@ public abstract class Character implements IAttack {
     }
 
     public void attack(Monster target){
-        target.updateHp(currentItem.getEffect());
+        int min = currentItem.getMinDmg();
+        int max = currentItem.getMaxDmg();
+        int damage = (int)(Math.random() * max + min);
+        target.updateHp(-damage);
     }
+
 }

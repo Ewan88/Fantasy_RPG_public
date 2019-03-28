@@ -1,16 +1,22 @@
 package items;
 
 public class Item {
-    private int effect;
+    private int minDmg;
+    private int maxDmg;
 
-    public Item(int effect){
-        this.effect = effect;
+    public Item(int minDmg, int maxDmg){
+        this.minDmg = minDmg;
+        this.maxDmg = maxDmg;
 
     }
 
 
 
-    public int getEffect() {
-      return effect;
+    public int getMinDmg() {
+      return minDmg;
+    }
+
+    public int getMaxDmg() {
+        return maxDmg;
     }
 }

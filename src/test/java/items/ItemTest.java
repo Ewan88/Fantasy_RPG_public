@@ -7,21 +7,21 @@ import static org.junit.Assert.assertEquals;
 
 public class ItemTest {
     Item sword;
-    Item potion;
+
 
     @Before
     public void setUp(){
-        sword = new Item(-10);
-        potion = new Item(5);
+        sword = new Item(2, 4);
+
     }
 
     @Test
-    public void swordHasNegativeInt() {
-        assertEquals(-10, sword.getEffect());
+    public void itemHasMinDmg() {
+        assertEquals(2, sword.getMinDmg());
     }
 
     @Test
-    public void potionhasPositiveInt() {
-        assertEquals(5, potion.getEffect());
+    public void itemHasMaxDmg() {
+        assertEquals(4, sword.getMaxDmg());
     }
 }

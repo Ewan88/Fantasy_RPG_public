@@ -6,11 +6,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertTrue;
 
 public class CharacterTest {
 
     Character barbarian, dwarf, knight, warlock, wizard;
-    Item sword, axe, club, fireball, lightning, potion;
+    Item sword, axe, club, fireball, lightning, potion, herb;
     Cleric cleric;
 
     Monster orc, goblin;
@@ -24,12 +25,13 @@ public class CharacterTest {
         warlock = new Warlock();
         wizard = new Wizard();
 
-        sword = new Item(-10);
-        axe = new Item(-20);
-        club = new Item(-15);
-        fireball = new Item(-15);
-        lightning = new Item(-20);
-        potion = new Item(10);
+        sword = new Item(6, 15);
+        axe = new Item(1, 20);
+        club = new Item(4, 14);
+        fireball = new Item(5, 25);
+        lightning = new Item(1, 30);
+        potion = new Item(5,15);
+        herb = new Item(2,3);
 
         goblin = new Monster(125, 23);
         orc = new Monster(200, 8);
@@ -65,7 +67,8 @@ public class CharacterTest {
     public void canHeal() {
         barbarian.updateHp(-10);
         cleric.heal(potion, barbarian);
-        assertEquals(120, barbarian.getHp());
+        boolean expected = barbarian.getHp() >= 115;
+        assertEquals(true, expected);
     }
 
     @Test
@@ -79,6 +82,6 @@ public class CharacterTest {
         knight.addItem(sword);
         knight.selectItem(sword);
         knight.attack(orc);
-        assertEquals(190, orc.getHp());
+        assertTrue(orc.getHp() >= 185);
     }
 }

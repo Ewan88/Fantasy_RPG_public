@@ -10,7 +10,10 @@ public class Cleric extends Character {
 
     public void heal(Item item, Character target){
         if (target.getHp() < target.getMaxhp() && target.getHp() > 0){
-            target.updateHp(item.getEffect());
+            int min = item.getMinDmg();
+            int max = item.getMaxDmg();
+            int damage = (int)(Math.random() * max + min);
+            target.updateHp(damage);
         }
     }
 
