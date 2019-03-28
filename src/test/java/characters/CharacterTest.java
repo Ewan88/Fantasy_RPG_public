@@ -73,6 +73,7 @@ public class CharacterTest {
 
     @Test
     public void cannotOverheal() {
+        barbarian.updateHp(-4);
         cleric.heal(potion, barbarian);
         assertEquals(120, barbarian.getHp());
     }
@@ -82,6 +83,6 @@ public class CharacterTest {
         knight.addItem(sword);
         knight.selectItem(sword);
         knight.attack(orc);
-        assertTrue(orc.getHp() >= 185);
+        assertTrue(orc.getHp() > 184);
     }
 }

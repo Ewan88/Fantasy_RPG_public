@@ -13,7 +13,11 @@ public class Cleric extends Character {
             int min = item.getMinDmg();
             int max = item.getMaxDmg();
             int damage = (int)(Math.random() * max + min);
-            target.updateHp(damage);
+            if (damage > (target.getMaxhp() - target.getHp())){
+                target.updateHp(target.getMaxhp() - target.getHp());
+            } else {
+                target.updateHp(damage);
+            }
         }
     }
 

@@ -10,9 +10,9 @@ import java.util.Random;
 
 public abstract class Character implements IAttack {
 
-    private int hp, maxhp;
-    private ArrayList<Item> items;
-    private Item currentItem;
+    protected int hp, maxhp, armor;
+    protected ArrayList<Item> items;
+    protected Item currentItem;
 
     public Character(){
         this.hp = 100;

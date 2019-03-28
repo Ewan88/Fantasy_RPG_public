@@ -5,6 +5,7 @@ import characters.Knight;
 import org.junit.Before;
 import org.junit.Test;
 
+import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 public class MonsterTest {
@@ -14,7 +15,7 @@ public class MonsterTest {
 
     @Before
     public void setUp(){
-        orc = new Monster(250, 5);
+        orc = new Monster(250, 20);
         goblin = new Monster(120, 15);
         knight = new Knight();
     }
@@ -28,6 +29,6 @@ public class MonsterTest {
     @Test
     public void monsterCanAttack() {
         orc.attack(knight);
-        assertEquals(95, knight.getHp());
+        assertTrue(knight.getHp() >= 80);
     }
 }
