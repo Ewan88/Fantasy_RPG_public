@@ -1,4 +1,9 @@
 package characters;
 
 public class Warlock extends Character {
+
+    public Warlock(){
+        this.updateHp(-10);
+    }
+
 }

@@ -44,4 +44,14 @@ public class CharacterTest {
         assertEquals(axe, barbarian.getCurrentItem());
     }
 
+    @Test
+    public void hasDifferentHP(){
+        assertEquals(120, barbarian.getHp());
+        assertEquals(100, cleric.getHp());
+        assertEquals(100, knight.getHp());
+        assertEquals(90, warlock.getHp());
+        assertEquals(80, wizard.getHp());
+        assertEquals(140, dwarf.getHp());
+    }
+
 }

@@ -6,12 +6,22 @@ import java.util.ArrayList;
 
 public abstract class Character {
 
+    private int hp;
     private ArrayList<Item> items;
     private Item currentItem;
 
     public Character(){
+        this.hp = 100;
         this.items = new ArrayList<Item>();
         this.currentItem = null;
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void updateHp(int value) {
+        this.hp += value;
     }
 
     public ArrayList<Item> getItems() {
