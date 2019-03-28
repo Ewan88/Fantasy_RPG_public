@@ -1,4 +1,4 @@
 package characters;
 
-public class Dwarf {
+public class Dwarf extends Character {
 }

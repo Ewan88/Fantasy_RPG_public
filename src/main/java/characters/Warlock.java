@@ -1,4 +1,4 @@
 package characters;
 
-public class Warlock {
+public class Warlock extends Character {
 }
