@@ -5,6 +5,7 @@ import monsters.Monster;
 import rooms.Room;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Runner {
 
@@ -59,11 +60,36 @@ public class Runner {
         System.out.println("d. Knight " + knight.getMaxhp()
                 + "hp " + knight.getCurrentItem().getMaxDmg() + "dmg" + " - Armor");
         System.out.println("e. Warlock " + warlock.getMaxhp()
-                + "hp " + warlock.getCurrentItem().getMaxDmg() + "dmg" + " - ");
+                + "hp " + warlock.getCurrentItem().getMaxDmg() + "dmg" + " - Has A Pet");
         System.out.println("f. Wizard " + wizard.getMaxhp()
                 + "hp " + wizard.getCurrentItem().getMaxDmg() + "dmg" + " - Ultimate");
 
+        String input = "";
+        while (input.length() < 1 && input.length() > 1){
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("\n");
+            input = scanner.next();
+            switch (input){
+                case "a":
+                    selectedCharacter = barbarian;
+                case "b":
+                    selectedCharacter = cleric;
+                case "c":
+                    selectedCharacter = dwarf;
+                case "d":
+                    selectedCharacter = knight;
+                case "e":
+                    selectedCharacter = warlock;
+                case "f":
+                    selectedCharacter = wizard;
+        }
 
+
+        }
+
+//        while ((input = scanner.next()) != "\n"){
+//            System.out.println(input);
+//        }
 
 
 
