@@ -1,6 +1,7 @@
 package rooms;
 
 import characters.Character;
+import items.Item;
 import monsters.Monster;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ public class Room {
 
     ArrayList<Character> characters;
     ArrayList<Monster> monsters;
+    ArrayList<Item> loot;
 
     public Room(){
         characters = new ArrayList<Character>();

@@ -7,10 +7,7 @@ public class Item {
     public Item(int minDmg, int maxDmg){
         this.minDmg = minDmg;
         this.maxDmg = maxDmg;
-
     }
-
-
 
     public int getMinDmg() {
       return minDmg;
