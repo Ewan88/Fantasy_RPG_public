@@ -1,10 +1,12 @@
 package characters;
 
+import interfaces.IAttack;
 import items.Item;
+import monsters.Monster;
 
 import java.util.ArrayList;
 
-public abstract class Character {
+public abstract class Character implements IAttack {
 
     private int hp;
     private ArrayList<Item> items;
@@ -41,5 +43,9 @@ public abstract class Character {
 
     public Item getCurrentItem() {
         return currentItem;
+    }
+
+    public void attack(Item weapon, Monster target){
+        target.updateHp(weapon.getEffect());
     }
 }

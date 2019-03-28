@@ -12,7 +12,7 @@ public class Monster {
         return hp;
     }
 
-    public void setHp(int value) {
+    public void updateHp(int value) {
         this.hp += value;
     }
 

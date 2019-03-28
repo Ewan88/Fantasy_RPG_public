@@ -54,4 +54,8 @@ public class CharacterTest {
         assertEquals(140, dwarf.getHp());
     }
 
+    @Test
+    public void canHeal() {
+
+    }
 }
