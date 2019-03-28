@@ -8,8 +8,9 @@ import static junit.framework.TestCase.assertEquals;
 
 public class CharacterTest {
 
-    Character barbarian, cleric, dwarf, knight, warlock, wizard;
+    Character barbarian, dwarf, knight, warlock, wizard;
     Item sword, axe, club, fireball, lightning, potion;
+    Cleric cleric;
 
     @Before
     public void setup(){
@@ -56,6 +57,8 @@ public class CharacterTest {
 
     @Test
     public void canHeal() {
-
+        barbarian.updateHp(-10);
+        cleric.heal(potion, barbarian);
+        assertEquals(120, barbarian.getHp());
     }
 }

@@ -2,7 +2,7 @@ package characters;
 
 import items.Item;
 
-public class Cleric extends Character{
+public class Cleric extends Character {
 
     public Cleric(){
 
